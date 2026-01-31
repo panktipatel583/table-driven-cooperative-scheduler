@@ -21,7 +21,11 @@ This project demonstrates a minimal bare-metal scheduler using:
 This pattern avoids switch/if chains, scales cleanly by adding table entries,
 and is commonly used in bare-metal embedded systems without an RTOS.
 
+## Notes
+- Tasks are cooperative; handlers should be short and must not block.
+
 ## Build & Run
 ```sh
 gcc -Wall -Wextra main.c scheduler.c -o scheduler
 ./scheduler
+```
