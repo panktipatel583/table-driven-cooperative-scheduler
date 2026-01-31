@@ -18,7 +18,7 @@ static const TIMED_TASK timed_task[] =
 {
     { 2, taskA, 1}, /* every 2 ticks*/
     { 5, taskB, 2}, /*every 5 ticks*/
-    { 0,0,0}        /*sentinel*/
+    { 0,NULL,0}        /*sentinel*/
 };
 
 
@@ -39,7 +39,6 @@ void scheduler_run(void)
         if((time % t->interval) == 0)
         {
             t->task(t->id);
-            printf("time=%u\n", (unsigned)time);
         }
     }
 
